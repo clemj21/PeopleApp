@@ -93,8 +93,9 @@ namespace PeopleApp.Controllers
         }
 
         // POST: api/People
+        [HttpPost]
         [ResponseType(typeof(Person))]
-        public async Task<IHttpActionResult> PostPerson(Person person)
+        public async Task<IHttpActionResult> PostPerson([FromBody]Person person)
         {
             if (!ModelState.IsValid)
             {
@@ -104,8 +105,9 @@ namespace PeopleApp.Controllers
             db.People.Add(person);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = person.Id }, person);
+            return CreatedAtRoute("defaultapi", new { id = person.Id }, person);
         }
+
 
         // DELETE: api/People/5
         [ResponseType(typeof(Person))]
