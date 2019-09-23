@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web.Http.Results;
 using Moq;
 using System.Data.Entity;
+using System.Threading.Tasks;
+using System.Web.Http;
 
 namespace PeopleApp.Tests.Controllers
 {
@@ -111,6 +113,31 @@ namespace PeopleApp.Tests.Controllers
             Assert.AreEqual("Hawkeye", people.ElementAt(0).FirstName);
             Assert.AreEqual("House", people.ElementAt(1).LastName);
 
+        }
+
+        [TestMethod]
+        public async Task AddAPerson()
+        {
+            Person newPerson = new Person()
+            {
+                Id = 5,
+                FirstName = "Barry",
+                LastName = "Berkman",
+                Address = "9483 Sana Rose St",
+                City = "Los Angeles",
+                State = "CA",
+                Age = 27,
+                Interests = "Assasin",
+                PictureFile = "",
+                ZipCode = "95847"
+            };
+
+            IHttpActionResult actionResult = await service.PostPerson(newPerson);
+            var createdResult = actionResult as CreatedAtRouteNegotiatedContentResult<Person>;
+
+            Assert.IsNotNull(createdResult);
+            Assert.AreEqual("Default", createdResult.RouteName);
+            Assert.AreEqual(5, createdResult.RouteValues["id"]);
         }
 
     }
