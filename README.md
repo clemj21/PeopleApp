@@ -11,3 +11,4 @@ is done through REST methods (see the Wiki).  There is also a Web UI application
   - Bootstrap
   - AngularJS
 - People Search REST API: http://localhost:64884/api/people
+- Unit Tests: PeopleApp.Tests/PeopleControllerTest
