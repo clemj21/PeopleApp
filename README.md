@@ -8,4 +8,6 @@ is done through REST methods (see the Wiki).  There is also a Web UI application
 - Seed the database using EF Migrations.  Migration files are included.  From the Package Manager console run: **update-database**
 - Web server URL : http://localhost:64884/
 - People Search Web UI:  http://localhost:64884/index.html
+  - Bootstrap
+  - AngularJS
 - People Search REST API: http://localhost:64884/api/people
