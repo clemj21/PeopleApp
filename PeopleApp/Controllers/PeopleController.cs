@@ -58,7 +58,7 @@ namespace PeopleApp.Controllers
         }
 
         // PUT: api/People/5
-        [ResponseType(typeof(void))]
+        /*[ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutPerson(int id, Person person)
         {
             if (!ModelState.IsValid)
@@ -90,7 +90,7 @@ namespace PeopleApp.Controllers
             }
 
             return StatusCode(HttpStatusCode.NoContent);
-        }
+        }*/
 
         // POST: api/People
         [Route("")]
@@ -117,7 +117,7 @@ namespace PeopleApp.Controllers
 
 
         // DELETE: api/People/5
-        [ResponseType(typeof(Person))]
+        /*[ResponseType(typeof(Person))]
         public async Task<IHttpActionResult> DeletePerson(int id)
         {
             Person person = await db.People.FindAsync(id);
@@ -130,7 +130,7 @@ namespace PeopleApp.Controllers
             await db.SaveChangesAsync();
 
             return Ok(person);
-        }
+        }*/
 
         protected override void Dispose(bool disposing)
         {
