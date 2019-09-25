@@ -13,4 +13,4 @@ is done through REST methods (see the Wiki).  There is also a Web UI application
   - AngularJS
 - People Search REST API: http://localhost:64884/api/people
 - Unit Tests: PeopleApp.Tests/PeopleControllerTest
-- See the Wiki for the PowerShell convenience scripts
+- See the Wiki for API documentation and the PowerShell convenience scripts
